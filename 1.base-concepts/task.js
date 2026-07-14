@@ -10,8 +10,8 @@ function solveEquation(a, b, c) {
     let result = [];
 
     if (discriminant > 0) {
-        result[0] = (-b - discriminant ** (1 / 2)) / (2 * a);
-        result[1] = (-b + discriminant ** (1 / 2)) / (2 * a); 
+        result[0] = (-b + discriminant ** (1 / 2)) / (2 * a);
+        result[1] = (-b - discriminant ** (1 / 2)) / (2 * a); 
     } else if (discriminant === 0) {
         result[0] = -b / (2 * a);
     }
@@ -22,6 +22,6 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
     let percentMonth = percent / (100 * 12);
     let bodyCredit = amount - contribution;
     let monthPayment = bodyCredit * (percentMonth + (percentMonth / (((1 + percentMonth) ** countMonths) - 1)));
-    let sumPayment = (monthPayment * countMonths).toFixed(2);
+    let sumPayment = +(monthPayment * countMonths).toFixed(2);
     return sumPayment;
 }
